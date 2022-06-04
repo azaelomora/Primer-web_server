@@ -12,35 +12,35 @@ hbs.registerPartials(__dirname + '/views/partials');
 //Middelware: Función que se ejecuta antes que otra cosa
 
 //servir contendio estático
-app.use(express.static('public'));
+app.use(express.static('public/react'));
 
-
-app.get('/', (req, res) => {
-    res.render('home', {
-        nombre: 'Azael Moreno',
-        titulo: 'Curso de Node'
-    });
-});
-
-//Mandar página sin extensión html
-app.get('/generic', (req, res) => {
-    res.render('generic', {
-        nombre: 'Azael Moreno',
-        titulo: 'Curso de Node'
-    });
-});
-
-
-app.get('/elements', (req, res) => {
-    res.render('elements', {
-        nombre: 'Azael Moreno',
-        titulo: 'Curso de Node'
-    });
-});
+//
+//app.get('/', (req, res) => {
+//    res.render('home', {
+//        nombre: 'Azael Moreno',
+//        titulo: 'Curso de Node'
+//    });
+//});
+//
+////Mandar página sin extensión html
+//app.get('/generic', (req, res) => {
+//    res.render('generic', {
+//        nombre: 'Azael Moreno',
+//        titulo: 'Curso de Node'
+//    });
+//});
+//
+//
+//app.get('/elements', (req, res) => {
+//    res.render('elements', {
+//        nombre: 'Azael Moreno',
+//        titulo: 'Curso de Node'
+//    });
+//});
 
 //error
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/public/404.html');
+    res.sendFile(__dirname + '/public/react/index.html');
 });
 
 app.listen(port, () => {
